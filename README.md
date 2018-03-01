@@ -1,6 +1,6 @@
 # .NET Core build
 
-Current in structions:
+Current instructions:
 
 1) Roll forward the VERSION file as required
 2) Run docker login to authorize w with dockerhub
