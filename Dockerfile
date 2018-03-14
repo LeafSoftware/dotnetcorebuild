@@ -2,7 +2,8 @@ FROM microsoft/dotnet:sdk
 ADD VERSION .
 RUN apt-get update
 RUN apt-get install -y xz-utils python-pip
-RUN pip install awscli --upgrade --user
+ADD requirements.txt .
+RUN pip install --user -r requirements.txt
 RUN ln -s /root/.local/bin/aws /usr/bin/aws
 
 #INSTALL NODE 9.4 ON THE IMAGE
@@ -64,4 +65,3 @@ RUN set -ex \
   && ln -s /opt/yarn/bin/yarn /usr/local/bin/yarn \
   && ln -s /opt/yarn/bin/yarn /usr/local/bin/yarnpkg \
   && rm yarn-v$YARN_VERSION.tar.gz.asc yarn-v$YARN_VERSION.tar.gz
-
