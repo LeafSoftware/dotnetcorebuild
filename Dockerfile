@@ -1,5 +1,6 @@
 FROM microsoft/dotnet:sdk
 ADD VERSION .
+ADD migrate.py .
 RUN apt-get update
 RUN apt-get install -y xz-utils python-pip
 ADD requirements.txt .
