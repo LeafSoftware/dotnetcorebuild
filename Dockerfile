@@ -2,7 +2,7 @@ FROM microsoft/dotnet:sdk
 ADD VERSION .
 ADD migrate.py .
 RUN apt-get update -y
-RUN apt-get install -y xz-utils python-pip apt-transport-https ca-certificates curl gnupg2 software-properties-common
+RUN apt-get install -y xz-utils python-pip apt-transport-https ca-certificates curl gnupg2 software-properties-common jq
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
 RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
 RUN apt-get update -y
