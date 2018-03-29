@@ -54,7 +54,6 @@ print 'Running migration task.'
 response = ecs.run_task(
     cluster=task_config['cluster'],
     taskDefinition=task_config['taskDefinition'],
-    overrides=task_config['overrides'],
     count=task_config['count'],
     launchType=task_config['launchType'],
     networkConfiguration=task_config['networkConfiguration']
