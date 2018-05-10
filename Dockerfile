@@ -1,6 +1,9 @@
 FROM microsoft/dotnet:sdk
 ADD VERSION .
+ADD chamber .
+RUN chmod 755 chamber
 ADD migrate.py .
+RUN chmod 755 migrate.py
 RUN apt-get update -y
 RUN apt-get install -y xz-utils python-pip apt-transport-https ca-certificates curl gnupg2 software-properties-common jq
 RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
