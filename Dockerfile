@@ -1,4 +1,4 @@
-FROM microsoft/dotnet:sdk
+FROM microsoft/dotnet:2.1-sdk
 ENV DEBIAN_FRONTEND noninteractive
 ADD VERSION .
 ADD chamber .
